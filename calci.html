@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calci.css">
+    
+</head>
+<body>
+    <div id="container">
+        <div id="box">
+            <input type="text" placeholder="0"style="color:white" id="cal"><br><br>
+            &nbsp;&nbsp;<button onclick="Clear()">clr</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="del()">Del</button>&nbsp;&nbsp;
+            <button onclick="display('%')">%</button>&nbsp;&nbsp;
+            &nbsp;<button onclick="display('/')">/</button>&nbsp;&nbsp;<br><br>
+            &nbsp;&nbsp;<button onclick="display('7')">7</button>&nbsp;&nbsp;
+           &nbsp; <button onclick="display('8')">8</button>&nbsp;&nbsp;
+            <button onclick="display('9')">9</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="display('*')">*</button>&nbsp;&nbsp;<br><br>
+            &nbsp;&nbsp;<button onclick="display('4')">4</button>&nbsp;&nbsp;
+            &nbsp;<button onclick="display('5')">5</button>&nbsp;&nbsp;
+            &nbsp;<button onclick="display('6')">6</button>&nbsp;&nbsp;&nbsp;
+            <button onclick="display('-')">-</button>&nbsp;&nbsp;<br><br>
+            &nbsp;&nbsp;<button onclick="display('1')">1</button>&nbsp;&nbsp;
+            <button onclick="display('2')">2</button>&nbsp;&nbsp;
+            &nbsp;<button onclick="display('3')">3</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;<button onclick="display('+')">+</button>&nbsp;&nbsp;<br><br>
+           &nbsp; <button onclick="display('.')">.</button>&nbsp;&nbsp;
+            &nbsp;&nbsp;<button onclick="display('0')">0</button>&nbsp;&nbsp;
+            <button onclick="Calculate()" id="el">=</button>
+        </div>
+    </div>
+    <script>
+       let os=document.getElementById('cal');
+       function Clear()
+         {
+            os.value="0";
+        }
+        function display(num)
+        {
+            os.value+=num;
+            console.log(num);
+        }
+        function del()
+        {
+           os.value=cal.value.slice(0,-1);
+        }
+        function Calculate()
+        {
+            try
+            {
+                os.value=eval(os.value);
+
+            }
+            catch(err)
+            {
+                alert("Syntax error");
+            }
+        }
+    </script>
+</body>
+</html>
